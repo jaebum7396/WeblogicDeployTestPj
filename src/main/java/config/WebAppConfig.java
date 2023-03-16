@@ -30,8 +30,9 @@ public class WebAppConfig implements WebApplicationInitializer{
 		servletAppContext.register(ServletAppContext.class);
 				
 		DispatcherServlet dispatcherServlet = new  DispatcherServlet(servletAppContext);
+		dispatcherServlet.setThrowExceptionIfNoHandlerFound(true);
 		
-		ServletRegistration.Dynamic servlet = servletContext.addServlet("dispatcher",dispatcherServlet);
+		ServletRegistration.Dynamic servlet = servletContext.addServlet("dispatcherServlet", dispatcherServlet);
 		servlet.setLoadOnStartup(1);
 		servlet.addMapping("/");
 		
@@ -47,7 +48,5 @@ public class WebAppConfig implements WebApplicationInitializer{
 		filter.setInitParameter("encoding","utf-8");
 		filter.setInitParameter("forceEncoding", "true");
 		filter.addMappingForUrlPatterns(null, false, "/*");
-
-		//servletAppContext.register(ServletAppContext.class);
 	}
 }

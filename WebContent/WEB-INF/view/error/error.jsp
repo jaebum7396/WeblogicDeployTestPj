@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>은서파</title>
+<title>err</title>
 </head>
 <body>
 	<h1>오류가 발생했습니다.</h1>
